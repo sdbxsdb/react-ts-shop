@@ -3,6 +3,12 @@ import IconButton from "@material-ui/core/IconButton";
 
 export const Wrapper = styled.div`
   margin: 40px;
+
+  h1 { 
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
 `;
 
 export const StyledButton = styled(IconButton)`
@@ -19,5 +25,6 @@ export const CartHeader = styled.div`
 
   .closeBtn {
     cursor: pointer;
+    margin: 5px 5px 0 0;
   }
 `;

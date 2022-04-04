@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 
 //COMPONENTS from material-ui  library
+import Cart from "./Cart/Cart";
 import Drawer from "@material-ui/core/Drawer";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Grid from "@material-ui/core/Grid";
@@ -37,9 +38,8 @@ const App = () => {
   );
   console.log(data);
 
-  const getTotalItems = (items: CartItemType[]) => {
-    return null;
-  };
+  const getTotalItems = (items: CartItemType[]) =>
+    items.reduce((ack: number, item) => ack + item.amount, 0);
 
   const handleAddToCart = (clickedItem: CartItemType) => {
     return null;
@@ -54,11 +54,18 @@ const App = () => {
 
   return (
     <Wrapper>
+      <div>
+        <h1>This is a shop</h1>
+      </div>
       <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
         <CartHeader>
-          <CloseIcon className='closeBtn' onClick={() => setCartOpen(false)} />
+          <CloseIcon className="closeBtn" onClick={() => setCartOpen(false)} />
         </CartHeader>
-        Cart goes here
+        <Cart
+          cartItems={cartItems}
+          addToCart={handleAddToCart}
+          removeFromCart={handleRemoveFromCart}
+        />
       </Drawer>
 
       <StyledButton onClick={() => setCartOpen(true)}>
