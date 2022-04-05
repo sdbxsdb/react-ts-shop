@@ -13,29 +13,46 @@ type Props = {
 const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
   return (
     <Wrapper>
-      <div>
-        <h3>{item.title}</h3>
+      <h3>{item.title}</h3>
+
+      <div className="detailsWrapper">
         <div className="pricing">
-          <p>Item Price: £{item.price}</p>
-          <p>Subtotal: £{(item.amount * item.price).toFixed(2)}</p>
-        </div>
-        <div className="buttons">
-          <Button
-            size="small"
-            disableElevation
-            variant="contained"
-            onClick={() => removeFromCart(item.id)}
-          >-</Button>
-          <p>{item.amount}</p>
-          <Button
-            size="small"
-            disableElevation
-            variant="contained"
-            onClick={() => addToCart(item)}
-          >+</Button>
+          <div className="itemPriceWrapper">
+            <p>Item Price - </p>
+            <p>£{(item.price).toFixed(2)}</p>
+          </div>
+          <div className="subTotalWrapper">
+            <p>Subtotal -</p>
+            <p>£{(item.amount * item.price).toFixed(2)}</p>
+          </div>
         </div>
       </div>
-      <img src={item.image} alt={item.title} />
+      <div className="imgAndQty">
+        <div className="imgWrapper">
+          <img src={item.image} alt={item.title} />
+        </div>
+        <div className="qtyWrapper">
+          <div className="qty">
+            <div className="buttonsWrapper">
+              <Button
+                disableElevation
+                variant="contained"
+                onClick={() => removeFromCart(item.id)}
+              >
+                -
+              </Button>
+              <Button
+                disableElevation
+                variant="contained"
+                onClick={() => addToCart(item)}
+              >
+                +
+              </Button>
+            </div>
+          </div>
+          <p>{item.amount}</p>
+        </div>
+      </div>
     </Wrapper>
   );
 };

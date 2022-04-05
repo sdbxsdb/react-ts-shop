@@ -77,9 +77,9 @@ const App = () => {
   return (
     <Wrapper>
       <div>
-        <h1>This is a shop</h1>
+        <h1>Shoppyshop</h1>
       </div>
-      <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+      <Drawer className='cartBtn' anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
         <CartHeader>
           <CloseIcon className="closeBtn" onClick={() => setCartOpen(false)} />
         </CartHeader>
@@ -91,7 +91,7 @@ const App = () => {
       </Drawer>
 
       <StyledButton onClick={() => setCartOpen(true)}>
-        <Badge badgeContent={getTotalItems(cartItems)} color="error">
+        <Badge badgeContent={getTotalItems(cartItems)}>
           <AddShoppingCartIcon />
         </Badge>
       </StyledButton>

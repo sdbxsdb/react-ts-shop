@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     padding: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
   }
 `;
 
@@ -16,6 +17,12 @@ export const StyledButton = styled(IconButton)`
   z-index: 100;
   right: 20px;
   top: 20px;
+  background: rgba(225, 255, 255, 0.6);
+
+  .MuiBadge-badge {
+    background-color: #FFA01F;
+    color: #fff;
+  }
 `;
 
 export const CartHeader = styled.div`
@@ -25,6 +32,6 @@ export const CartHeader = styled.div`
 
   .closeBtn {
     cursor: pointer;
-    margin: 5px 5px 0 0;
+    margin: 15px 15px 0 0;
   }
 `;

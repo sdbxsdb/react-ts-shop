@@ -18,7 +18,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
   
   return (
     <Wrapper>
-      <h2>Your Shopping Cart</h2>
+      <h2>Your Cart</h2>
       {cartItems.length === 0 ? <p>No items in cart.</p> : null}
       {cartItems.map((item) => (
         <CartItem
@@ -28,7 +28,10 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
           removeFromCart={removeFromCart}
         />
       ))}
-      <h2>Total: £{calculateTotal(cartItems).toFixed(2)}</h2>
+      <div className='totalBasketWrapper'>
+        <h4>Total - </h4>
+        <h2 className='totalBasketPrice'> £{calculateTotal(cartItems).toFixed(2)}</h2>
+      </div>
     </Wrapper>
   );
 };
