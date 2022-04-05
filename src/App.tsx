@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 //COMPONENTS from material-ui  library
 import Cart from "./Cart/Cart";
 import Drawer from "@material-ui/core/Drawer";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import CircularStatic from "./Loading";
 import Grid from "@material-ui/core/Grid";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import CloseIcon from "@material-ui/icons/Close";
@@ -12,7 +12,12 @@ import Badge from "@material-ui/core/Badge";
 import Item from "./Item/Item";
 
 //STYLES
-import { Wrapper, StyledButton, CartHeader } from "./App.styles";
+import {
+  Wrapper,
+  StyledButton,
+  CartHeader,
+  LoadingWrapper,
+} from "./App.styles";
 
 //TYPES
 export type CartItemType = {
@@ -72,7 +77,13 @@ const App = () => {
     );
   };
 
-  if (isLoading) return <LinearProgress />;
+  if (isLoading)
+    return (
+      <LoadingWrapper>
+        Loading...
+        <CircularStatic />
+      </LoadingWrapper>
+    );
   if (error) return <div>Something went wrong...</div>;
 
   return (
@@ -80,7 +91,12 @@ const App = () => {
       <div>
         <h1>Shoppyshop</h1>
       </div>
-      <Drawer className='cartBtn' anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}>
+      <Drawer
+        className="cartBtn"
+        anchor="right"
+        open={cartOpen}
+        onClose={() => setCartOpen(false)}
+      >
         <CartHeader>
           <CloseIcon className="closeBtn" onClick={() => setCartOpen(false)} />
         </CartHeader>

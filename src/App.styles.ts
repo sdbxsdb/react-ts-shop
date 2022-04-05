@@ -1,6 +1,19 @@
 import styled from "styled-components";
 import IconButton from "@material-ui/core/IconButton";
 
+
+export const LoadingWrapper = styled.div`
+  width: 97vw;
+  height: 97vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+
+`
+
 export const Wrapper = styled.div`
   margin: 40px;
 
