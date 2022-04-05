@@ -55,6 +55,7 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
             </div>
           </div>
           <p>{item.amount}</p>
+          <small className="removeItem" onClick={() => removeFromCart(item.id)}>&#10005;</small>
         </div>
       </div>
     </Wrapper>

@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   border-bottom: 1px solid lightblue;
   padding-bottom: 20px;
   max-width: 300px;
+  position: relative;
 
 
 
@@ -87,6 +88,19 @@ export const Wrapper = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
+  }
+
+  .removeItem {
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border-radius: 100%;
+    padding: 2px 5px;
+    background-color: #C92222;
+    color: white;
+
   }
   
 `;

@@ -38,6 +38,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
           </>
         ) : null}
       </div>
+      
     </Wrapper>
   );
 };
