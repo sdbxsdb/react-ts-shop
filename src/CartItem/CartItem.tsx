@@ -19,11 +19,15 @@ const CartItem: React.FC<Props> = ({ item, addToCart, removeFromCart }) => {
         <div className="pricing">
           <div className="itemPriceWrapper">
             <p>Item Price - </p>
-            <p>£{(item.price).toFixed(2)}</p>
+            <p>£{item.price.toFixed(2)}</p>
           </div>
           <div className="subTotalWrapper">
-            <p>Subtotal -</p>
-            <p>£{(item.amount * item.price).toFixed(2)}</p>
+            {item.amount > 1 ? (
+              <>
+                <p>Subtotal -</p>
+                <p>£{(item.amount * item.price).toFixed(2)}</p>
+              </>
+            ) : null}
           </div>
         </div>
       </div>
