@@ -5,6 +5,7 @@ export const Wrapper = styled.aside`
   font-family: Arial, Helvetica, sans-serif;
   max-width: 100vw;
   padding: 20px;
+  min-width: 300px;
 
   .totalBasketWrapper {
     display: flex;

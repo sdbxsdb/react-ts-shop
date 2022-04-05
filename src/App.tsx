@@ -56,6 +56,7 @@ const App = () => {
       //First time the item is added
       return [...prev, { ...clickedItem, amount: 1 }];
     });
+    setCartOpen(true);
   };
 
   const handleRemoveFromCart = (id: number) => {
